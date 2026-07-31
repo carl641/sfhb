@@ -6,8 +6,8 @@
   <title>Custom Home Builder in Athens &amp; Huntsville, AL | Southern Family Home Builders</title>
   <meta name="description" content="Family-owned custom home builder serving Athens, Huntsville, and North Alabama for more than 20 years. Custom homes, remodeling, additions, and site development. Free estimates.">
   <link rel="canonical" href="https://www.southernfamilyhomebuilders.com/">
-  <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#101813" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#2C4133" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#131811" media="(prefers-color-scheme: dark)">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Southern Family Home Builders | Custom Homes in North Alabama">
@@ -17,8 +17,8 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <link rel="preload" href="assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/figtree-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/libre-baskerville-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <script type="application/ld+json">
@@ -58,6 +58,8 @@
     <symbol id="i-x" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></symbol>
     <symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></symbol>
     <symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"/></symbol>
+    <!-- Pine, drawn to match the trees in the logo. Used sparingly. -->
+    <symbol id="i-pine" viewBox="0 0 256 256"><path d="M128,16l40,68H146l38,62H156l44,66H140v32H116V212H56l44-66H72l38-62H88Z"/></symbol>
   </svg>
 
   <a class="skip-link" href="#main">Skip to content</a>
@@ -103,8 +105,12 @@
            alt="Log-style custom home with a wraparound deck and wide lawn at sunset"
            width="1920" height="1280" fetchpriority="high">
       <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-frame" aria-hidden="true"></div>
       <div class="container hero-content">
-        <p class="hero-eyebrow">Custom home builders in North Alabama</p>
+        <p class="hero-eyebrow">
+          <svg class="icon" aria-hidden="true"><use href="#i-pine"/></svg>
+          Custom home builders in North Alabama
+        </p>
         <h1>Built for the way your&nbsp;family lives.</h1>
         <p class="hero-sub">For more than 20 years, our family has built custom homes, remodels, and additions for yours.</p>
         <div class="hero-ctas">
@@ -391,7 +397,8 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a class="brand" href="#top" aria-label="Southern Family Home Builders, back to top">
+        <!-- Cream sign-board: the logo is dark artwork, so it never sits on the green. -->
+        <a class="brand brand-plaque" href="#top" aria-label="Southern Family Home Builders, back to top">
           <img class="brand-logo" src="assets/img/southern-family-home-builders-logo-166h.webp" alt="" width="145" height="150">
           <span class="brand-text">
             <span class="brand-name">Southern Family</span>
@@ -427,6 +434,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
+      <svg class="icon" aria-hidden="true"><use href="#i-pine"/></svg>
       <p>&copy; <span id="year">2026</span> Southern Family Home Builders LLC &middot; Licensed and insured</p>
     </div>
   </footer>
