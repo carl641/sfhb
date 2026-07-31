@@ -8,16 +8,47 @@ Static site, no build step, no runtime dependencies. Open `index.html` or serve 
 index.html            The page
 assets/css/styles.css All styling (design tokens, light + dark themes)
 assets/js/main.js     Nav, scroll reveals, gallery controls, form validation
-assets/fonts/         Self-hosted variable fonts (Bricolage Grotesque + Figtree, via Fontsource, OFL)
+assets/fonts/         Self-hosted fonts (Libre Baskerville + Source Sans 3, via Fontsource, OFL-1.1)
 assets/img/           Favicon, logo, and project photography
 ```
 
-## Design notes
+## Brand
 
-- **Palette:** deep pine green + bone neutrals + a single amber accent. Defined as CSS custom properties at the top of `styles.css`; dark mode follows `prefers-color-scheme` automatically.
-- **Type:** Bricolage Grotesque (display) and Figtree (body), self-hosted woff2, ~60KB total.
-- **Motion:** subtle scroll reveals via IntersectionObserver and a one-time hero settle. Everything honors `prefers-reduced-motion`.
-- **Icons:** inline SVG sprite from Phosphor Icons (MIT).
+The palette is pulled straight off the logo — pines, cabin logs, lettermark — and
+lives as CSS custom properties at the top of `styles.css`. Dark mode follows
+`prefers-color-scheme` and re-tunes the same hues; it does not introduce new ones.
+
+| Token | Hex | Job |
+| --- | --- | --- |
+| `--forest` | `#2C4133` | Primary. Header beam, nav links, CTA band, footer. |
+| `--forest-2` | `#334235` | Secondary green. The land & site development panel. |
+| `--olive` | `#393B25` | Olive accent. Nav hover, and the tint on the hero scrim. |
+| `--cedar` | `#A07356` | Secondary. Buttons, beam rules, card lintels, photo frames. |
+| `--cedar-lt` | `#D9B08C` | Cedar for dark grounds — plain `--cedar` is only 2.7:1 on green. |
+| `--wood-soft` | `#9A8066` | Lighter wood tone. Dividers and muted borders. |
+| `--head` | `#000000` | Headlines, matching the SFHB lettering. |
+| `--bg` | `#F7F6F4` | Warm off-white. Never a stark white page. |
+
+- **Type:** Libre Baskerville for headings — a sturdy serif that echoes the
+  lettermark — and Source Sans 3 for body copy. Self-hosted woff2, ~69KB total.
+- **Beam motif:** the logo's timber framing, reused as a system. A cedar rule
+  above every section heading, a 3px lintel across the top of each card, a
+  hairline-and-corner-joint frame around the hero, cedar sills under the gallery
+  photos and the form panel, and buttons milled square (4px) with a beveled edge
+  and a black label — the logo's beam banner, more or less exactly.
+- **Logo placement:** the artwork is dark on transparency, so it only ever sits on
+  a light ground. The header bar stays off-white in both themes; on the green
+  footer (and in the dark-theme header) it gets a cream sign-board with a cedar
+  frame. Do not place it on `--forest`.
+- **Contrast:** every pairing is AA or better, verified with axe-core in both
+  themes at 1440px and 390px. `--cedar` is a large-text / border / icon colour on
+  light grounds (3.8:1); body copy uses `--ink` or `--muted`. Cedar buttons carry a
+  near-black label (4.8:1), and hover *lightens* to `--cedar-hi` so contrast rises
+  rather than falls.
+- **Motion:** subtle scroll reveals via IntersectionObserver and a one-time hero
+  settle. Everything honors `prefers-reduced-motion`.
+- **Icons:** inline SVG sprite from Phosphor Icons (MIT), plus a pine drawn to
+  match the trees in the logo.
 
 ## Before launch
 
