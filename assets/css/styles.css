@@ -516,6 +516,9 @@ a { color: inherit; }
   height: 100%;
   object-fit: cover;
 }
+/* Portrait kitchen photo in a landscape card: hold the crop on the range wall. */
+#remodeling .cell-media img { object-position: center 58%; }
+
 .ratio-wide { aspect-ratio: 16 / 10; }
 .ratio-std { aspect-ratio: 16 / 9; }
 .cell-feature .cell-media { aspect-ratio: auto; min-height: 18rem; }
@@ -690,7 +693,8 @@ a { color: inherit; }
 }
 .about-media img {
   border-radius: var(--r-panel);
-  aspect-ratio: 10 / 11.5;
+  /* Landscape crop: the real project photos are all wider than they are tall. */
+  aspect-ratio: 5 / 4;
   object-fit: cover;
   width: 100%;
   box-shadow: var(--shadow-soft);
