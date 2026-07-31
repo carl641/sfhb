@@ -9,7 +9,7 @@ index.html            The page
 assets/css/styles.css All styling (design tokens, light + dark themes)
 assets/js/main.js     Nav, scroll reveals, gallery controls, form validation
 assets/fonts/         Self-hosted variable fonts (Bricolage Grotesque + Figtree, via Fontsource, OFL)
-assets/img/           Favicon
+assets/img/           Favicon, logo, and project photography
 ```
 
 ## Design notes
@@ -21,6 +21,16 @@ assets/img/           Favicon
 
 ## Before launch
 
-1. **Photography is placeholder stock.** All photos hot-link Unsplash (with a picsum.photos fallback baked into each `<img onerror>`). Replace with real project photography: hero, 3 service images, 4 gallery images, 1 about image. Sizes are noted in each tag's `width`/`height` attributes.
+1. **Photography is real but thin.** Every image on the page is a self-hosted project photo from `assets/img/` — no stock, no hot-linking. There are five photos filling nine placements, so a few repeat between the service cards, the gallery, and the about panel:
+
+   | Photo | Used in |
+   | --- | --- |
+   | `...hero+home-1920w.jpg` | Hero, gallery |
+   | `...hero+custom+homes-1028w.webp` | Custom Homes card, gallery |
+   | `...hero+green+home+building-1028w.webp` | About panel, gallery |
+   | `...hero+home+additions-1028w.webp` | Home Additions card, gallery |
+   | `...home+sub+image-453w.webp` | Remodeling card, gallery |
+
+   Add more project photos to `assets/img/` and swap them in to clear the repeats. Gallery captions describe the subject rather than a town — add real project locations once they're confirmed.
 2. **Wire the estimate form.** It validates client-side and shows a success panel, but does not send anywhere yet. Point the `<form>` at Netlify Forms, Formspree, or the site's CMS (see the note in `index.html` and `main.js`).
 3. **Confirm the details.** Phone number (256) 397-3204, service-area towns, and the "20+ years / veteran discount / free estimates" claims were pulled from the current live site. Verify before publishing. The testimonial is placeholder copy awaiting a real customer quote.

@@ -38,9 +38,11 @@
 
   <!--
     Icon sprite: glyphs from @phosphor-icons/core (regular weight, MIT).
-    Logo and hero photo are real assets (assets/img/). Section/gallery photography
-    is still placeholder stock (Unsplash CDN with picsum.photos fallback);
-    replace with real project photography before launch.
+    All photography is real, self-hosted from assets/img/. There are five project
+    photos covering nine placements, so a few are reused between the service cards,
+    the gallery, and the about panel. Drop additional project photos into
+    assets/img/ and swap them in to remove the repeats. Gallery captions carry
+    subjects, not towns - add real project locations once confirmed.
   -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
     <symbol id="i-phone" viewBox="0 0 256 256"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></symbol>
@@ -147,9 +149,9 @@
         <div class="bento">
           <article class="cell cell-feature reveal" id="custom-homes">
             <div class="cell-media ratio-wide">
-              <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1300&q=75"
-                   onerror="this.onerror=null;this.src='https://picsum.photos/seed/sfhb-custom-home/1300/820'"
-                   alt="New white farmhouse-style custom home with a covered front porch" width="1300" height="820" loading="lazy">
+              <img src="assets/img/southern+family+home+builders+hero+custom+homes-1028w.webp"
+                   alt="Custom home entry with cedar timber columns, a gabled porch, and a dark double front door"
+                   width="1030" height="609" loading="lazy">
             </div>
             <div class="cell-body">
               <h3>Custom Homes</h3>
@@ -159,9 +161,9 @@
 
           <article class="cell reveal" id="remodeling" style="--d:.08s">
             <div class="cell-media ratio-std">
-              <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=75"
-                   onerror="this.onerror=null;this.src='https://picsum.photos/seed/sfhb-kitchen-remodel/900/560'"
-                   alt="Freshly remodeled kitchen with a large island and white cabinetry" width="900" height="560" loading="lazy">
+              <img src="assets/img/southern+family+home+builders+home+sub+image-453w.webp"
+                   alt="Remodeled kitchen with walnut cabinetry, a stacked-stone backsplash, and a professional range"
+                   width="450" height="593" loading="lazy">
             </div>
             <div class="cell-body">
               <h3>Remodeling</h3>
@@ -171,9 +173,9 @@
 
           <article class="cell reveal" id="additions" style="--d:.16s">
             <div class="cell-media ratio-std">
-              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=75"
-                   onerror="this.onerror=null;this.src='https://picsum.photos/seed/sfhb-addition-framing/900/560'"
-                   alt="New room addition being framed in fresh lumber" width="900" height="560" loading="lazy">
+              <img src="assets/img/southern+family+home+builders+hero+home+additions-1028w.webp"
+                   alt="Covered outdoor living addition with a timber-frame roof, built-in grill, and stone fireplace"
+                   width="1030" height="488" loading="lazy">
             </div>
             <div class="cell-body">
               <h3>Home Additions</h3>
@@ -233,28 +235,34 @@
       </div>
       <div class="gallery" tabindex="0" aria-label="Project photos, scroll horizontally">
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1100&q=75"
-               onerror="this.onerror=null;this.src='https://picsum.photos/seed/sfhb-project-athens/1100/760'"
-               alt="Single-story custom home with a manicured lawn under a clear sky" width="1100" height="760" loading="lazy">
-          <figcaption>Custom build &middot; Athens, AL</figcaption>
+          <img src="assets/img/southern+family+home+builders+hero+home-1920w.jpg"
+               alt="Log-style custom home with a wraparound deck on an open lawn at sunset"
+               width="1920" height="1280" loading="lazy">
+          <figcaption>Custom build &middot; Timber-frame home &amp; wraparound deck</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1100&q=75"
-               onerror="this.onerror=null;this.src='https://picsum.photos/seed/sfhb-project-gunt/1100/760'"
-               alt="Modern custom home with a pool and covered patio at dusk" width="1100" height="760" loading="lazy">
-          <figcaption>Custom build &middot; Guntersville, AL</figcaption>
+          <img src="assets/img/southern+family+home+builders+hero+green+home+building-1028w.webp"
+               alt="Two-story brick home with blue shutters, a full front porch, and flower beds along the walk"
+               width="1030" height="659" loading="lazy">
+          <figcaption>Custom build &middot; Brick two-story with full front porch</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=75"
-               onerror="this.onerror=null;this.src='https://picsum.photos/seed/sfhb-project-madison/1100/760'"
-               alt="Two-story home exterior with clean landscaping" width="1100" height="760" loading="lazy">
-          <figcaption>Custom build &middot; Madison, AL</figcaption>
+          <img src="assets/img/southern+family+home+builders+hero+custom+homes-1028w.webp"
+               alt="Brick home entry framed by cedar timber columns and a gabled porch roof"
+               width="1030" height="609" loading="lazy">
+          <figcaption>Custom build &middot; Cedar timber entry &amp; covered porch</figcaption>
         </figure>
         <figure class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1100&q=75"
-               onerror="this.onerror=null;this.src='https://picsum.photos/seed/sfhb-project-hsv/1100/760'"
-               alt="Renovated home exterior with a pool in the evening light" width="1100" height="760" loading="lazy">
-          <figcaption>Whole-home remodel &middot; Huntsville, AL</figcaption>
+          <img src="assets/img/southern+family+home+builders+hero+home+additions-1028w.webp"
+               alt="Covered outdoor kitchen with a timber-frame roof, stone counters, and a stone fireplace"
+               width="1030" height="488" loading="lazy">
+          <figcaption>Addition &middot; Covered outdoor kitchen &amp; fireplace</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/img/southern+family+home+builders+home+sub+image-453w.webp"
+               alt="Kitchen with walnut cabinetry, a stacked-stone backsplash, and a professional range"
+               width="450" height="593" loading="lazy">
+          <figcaption>Remodel &middot; Walnut kitchen with stone hood surround</figcaption>
         </figure>
       </div>
     </section>
@@ -263,9 +271,9 @@
     <section class="about section" id="about">
       <div class="container about-grid">
         <div class="about-media reveal">
-          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=75"
-               onerror="this.onerror=null;this.src='https://picsum.photos/seed/sfhb-about-living/1000/1150'"
-               alt="Warm, finished living room in a newly built home" width="1000" height="1150" loading="lazy">
+          <img src="assets/img/southern+family+home+builders+hero+green+home+building-1028w.webp"
+               alt="Finished two-story brick home with a full front porch and mature landscaping"
+               width="1030" height="659" loading="lazy">
         </div>
         <div class="about-body reveal" style="--d:.1s">
           <h2>A family business, through and through</h2>
