@@ -53,6 +53,48 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
+  /* ----- Hero hover parallax ----- */
+  /* The photograph drifts a few pixels against the cursor while the frame and
+     the copy hold still. CSS damps the move; this only sets the target. */
+  var hero = document.querySelector(".hero");
+  var heroImg = hero && hero.querySelector(".hero-img");
+  var canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  if (heroImg && canHover && !reduceMotion) {
+    /* Kept under the .hero-img overscan so no edge is ever uncovered. */
+    var DRIFT_X = 14;
+    var DRIFT_Y = 8;
+    var pointerX = 0;
+    var pointerY = 0;
+    var pending = 0;
+
+    function drawParallax() {
+      pending = 0;
+      /* Read the box here rather than per event, so a move costs one layout
+         read per frame at most. */
+      var box = hero.getBoundingClientRect();
+      if (!box.width || !box.height) return;
+      var x = (0.5 - (pointerX - box.left) / box.width) * 2 * DRIFT_X;
+      var y = (0.5 - (pointerY - box.top) / box.height) * 2 * DRIFT_Y;
+      heroImg.style.translate = x.toFixed(2) + "px " + y.toFixed(2) + "px";
+    }
+
+    hero.addEventListener("pointermove", function (e) {
+      if (e.pointerType !== "mouse") return;
+      pointerX = e.clientX;
+      pointerY = e.clientY;
+      if (!pending) pending = requestAnimationFrame(drawParallax);
+    });
+
+    hero.addEventListener("pointerleave", function () {
+      if (pending) {
+        cancelAnimationFrame(pending);
+        pending = 0;
+      }
+      heroImg.style.translate = "0px 0px";
+    });
+  }
+
   /* ----- Gallery controls ----- */
   var gallery = document.querySelector(".gallery");
   document.querySelectorAll(".gallery-btn").forEach(function (btn) {
