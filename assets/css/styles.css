@@ -451,6 +451,11 @@ a { color: inherit; }
   /* Header bar + its 5px green beam, so the framed hero lands exactly on the fold. */
   min-height: clamp(34rem, calc(100dvh - 4.5rem - 5px), 52rem);
   overflow: hidden;
+
+  /* One source of truth for the beam frame: the hairline sits at --frame-inset,
+     and the copy clears it by a further --frame-gutter. */
+  --frame-inset: clamp(1rem, 3vw, 2.25rem);
+  --frame-gutter: clamp(1.05rem, 3.4vw, 3.25rem);
 }
 
 .hero-img {
@@ -460,13 +465,28 @@ a { color: inherit; }
   height: 100%;
   object-fit: cover;
   object-position: center 40%;
+  /* A hair of overscan, so the hover parallax never uncovers an edge - it has
+     to outrun the drift in main.js even on the shortest hero. */
+  scale: 1.05;
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-img {
-    transform: scale(1.06);
     animation: hero-settle 8s var(--ease) forwards;
   }
-  @keyframes hero-settle { to { transform: scale(1); } }
+  @keyframes hero-settle {
+    from { scale: 1.105; }
+    to { scale: 1.05; }
+  }
+}
+
+/* Hover parallax. main.js writes `translate`; the transition damps it so the
+   photograph trails the cursor rather than snapping to it. Kept off touch
+   screens, where there is no cursor to drift against. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .hero-img {
+    transition: translate 0.5s var(--ease);
+    will-change: translate;
+  }
 }
 
 .hero-scrim {
@@ -483,7 +503,7 @@ a { color: inherit; }
    cedar corner joints at the two diagonal corners. */
 .hero-frame {
   position: absolute;
-  inset: clamp(1rem, 3vw, 2.25rem);
+  inset: var(--frame-inset);
   border: 1px solid rgba(217, 176, 140, 0.32);
   pointer-events: none;
 }
@@ -501,6 +521,9 @@ a { color: inherit; }
 .hero-content {
   position: relative;
   width: 100%;
+  /* Inside the frame, not on it: the container gutter alone left the copy
+     straddling the hairline, so measure in from the frame instead. */
+  padding-inline: calc(var(--frame-inset) + var(--frame-gutter));
   padding-block: 4.5rem 5.5rem;
   max-width: none;
 }
